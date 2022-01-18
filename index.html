@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@200;300;400&display=swap"
+      rel="stylesheet"
+    />
+    <title>BattleShip</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+
+  <body>
+    <!-- <div class="box right"></div>
+    <div class="box left"></div> -->
+    <div class="global--application--container">
+      <h1>Battleship</h1>
+      <div class="loader"></div>
+      <div class="hardMode">Hard Mode: <span class="difficulty">OFF</span></div>
+      <label class="switch">
+        <input class="checkbox" type="checkbox" />
+        <span class="slider round"></span>
+      </label>
+
+      <div class="container-btns">
+        <div class="button startgame">
+          <button class="btn-play">Play</button>
+        </div>
+        <div class="button"><button class="btn-reset">Reset</button></div>
+      </div>
+
+      <div class="victory-container"><h4>You won the game 🎉</h4></div>
+      <div class="loose-container"><h4>You lost the Game👎</h4></div>
+      <div class="container__battleship">
+        <div class="troops player playing">
+          <h2>Player</h2>
+          <li
+            class="legend player-side"
+            data-shipname="Porte-avion"
+            data-player="player"
+          >
+            <div class="iconBoat">🚢</div>
+            <div class="item legend"></div>
+            <div class="item legend"></div>
+            <div class="item legend"></div>
+            <div class="item legend"></div>
+            <div class="item legend"></div>
+          </li>
+          <li
+            class="legend player-side"
+            data-shipname="Croiseur"
+            data-player="player"
+          >
+            <div class="iconBoat">🚢</div>
+            <div class="item legend"></div>
+            <div class="item legend"></div>
+            <div class="item legend"></div>
+            <div class="item legend"></div>
+          </li>
+          <li
+            class="legend player-side"
+            data-shipname="Sous-marin"
+            data-player="player"
+          >
+            <div class="iconBoat">🚢</div>
+            <div class="item legend"></div>
+            <div class="item legend"></div>
+            <div class="item legend"></div>
+          </li>
+          <li
+            class="legend player-side"
+            data-shipname="Torpilleur"
+            data-player="player"
+          >
+            <div class="iconBoat">🚢</div>
+            <div class="item legend"></div>
+            <div class="item legend"></div>
+          </li>
+        </div>
+
+        <div class="container application" id="app"></div>
+        <div class="troops computer">
+          <h2>Computer</h2>
+          <li
+            class="legend player-side"
+            data-shipname="Porte-avion"
+            data-player="computer"
+          >
+            <div class="iconBoat">🚢</div>
+            <div class="item legend"></div>
+            <div class="item legend"></div>
+            <div class="item legend"></div>
+            <div class="item legend"></div>
+            <div class="item legend"></div>
+          </li>
+          <li
+            class="legend player-side"
+            data-shipname="Croiseur"
+            data-player="computer"
+          >
+            <div class="iconBoat">🚢</div>
+            <div class="item legend"></div>
+            <div class="item legend"></div>
+            <div class="item legend"></div>
+            <div class="item legend"></div>
+          </li>
+          <li
+            class="legend player-side"
+            data-shipname="Sous-marin"
+            data-player="computer"
+          >
+            <div class="iconBoat">🚢</div>
+            <div class="item legend"></div>
+            <div class="item legend"></div>
+            <div class="item legend"></div>
+          </li>
+          <li
+            class="legend player-side"
+            data-shipname="Torpilleur"
+            data-player="computer"
+          >
+            <div class="iconBoat">🚢</div>
+            <div class="item legend"></div>
+            <div class="item legend"></div>
+          </li>
+        </div>
+      </div>
+      <div class="container__player">
+        <div class="header--rotate">
+          <h3>Drag ships on grid</h3>
+          <button class="btn-rotate">Rotate</button>
+        </div>
+
+        <div class="battleship__global__troops horizontal">
+          <!-- <div class="item troops porte-avion" data-size =5  data-shipname = "Porte-avion" draggable="true"></div> -->
+          <div class="battleship boat-5">
+            <div
+              class="container__ships horizontal"
+              draggable="true"
+              data-shipname="Porte-avion"
+            >
+              <div class="item troops"><span></span></div>
+              <div class="item troops"><span></span></div>
+              <div class="item troops"><span></span></div>
+              <div class="item troops"><span></span></div>
+              <div class="item troops"><span></span></div>
+            </div>
+          </div>
+          <div class="battleship boat-4">
+            <div
+              class="container__ships horizontal"
+              draggable="true"
+              data-shipname="Croiseur"
+            >
+              <div class="item troops"><span></span></div>
+              <div class="item troops"><span></span></div>
+              <div class="item troops"><span></span></div>
+              <div class="item troops"><span></span></div>
+            </div>
+          </div>
+
+          <div class="battleship boat-3">
+            <div
+              class="container__ships horizontal"
+              draggable="true"
+              data-shipname="Sous-marin"
+            >
+              <div class="item troops"><span></span></div>
+              <div class="item troops"><span></span></div>
+              <div class="item troops"><span></span></div>
+            </div>
+          </div>
+          <div class="battleship boat-2">
+            <div
+              class="container__ships horizontal"
+              draggable="true"
+              data-shipname="Torpilleur"
+            >
+              <div class="item troops"><span></span></div>
+              <div class="item troops"><span></span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
